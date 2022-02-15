@@ -22,6 +22,6 @@ class IndexController {
         } else {
             dag = "werkdag";
         }
-        return new ModelAndView("index").addObject(dag);
+        return new ModelAndView("index").addObject("dag", dag);
     }
 }
