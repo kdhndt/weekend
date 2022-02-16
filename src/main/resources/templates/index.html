@@ -2,9 +2,10 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title th:text="${dag}"></title>
+    <title th:text="Weekend"></title>
 </head>
 <body>
-<h1 th:text="#{${dag}}"></h1>
+<h1 th:if="${weekend}" th:text="#{weekend}"></h1>
+<h1 th:if="not ${weekend}" th:text="#{werkdag}"></h1>
 </body>
 </html>

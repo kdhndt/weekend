@@ -14,14 +14,8 @@ class IndexController {
 
     @GetMapping
     public ModelAndView index() {
-//        var dag = LocalDate.of(0,0,0);
-        String dag;
         var dagVanDeWeek = LocalDate.now().getDayOfWeek();
-        if (dagVanDeWeek == DayOfWeek.SUNDAY || dagVanDeWeek == DayOfWeek.SATURDAY) {
-            dag = "weekend";
-        } else {
-            dag = "werkdag";
-        }
-        return new ModelAndView("index").addObject("dag", dag);
+        return new ModelAndView("index")
+                .addObject("weekend", dagVanDeWeek == DayOfWeek.SUNDAY || dagVanDeWeek == DayOfWeek.SATURDAY);
     }
 }
